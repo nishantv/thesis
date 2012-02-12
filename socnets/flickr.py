@@ -658,7 +658,7 @@ def photos_search_pages(user_id='', auth=False,  tags='', tag_mode='', text='',\
                   page=page, sort=sort)
 	
     return data.rsp.photos.pages
-	
+	 
 #XXX: Could be class method in User
 def people_findByEmail(email):
     """Returns User object."""
