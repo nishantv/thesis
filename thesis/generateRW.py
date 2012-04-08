@@ -6,14 +6,25 @@ import flickr
 import random
 
 def main():
-    MAXHOPS = 20 #number of hops
+    MAXHOPS = 20 #number of hops    
+    startRW(MAXHOPS)
+    startRDS(MAXHOPS)
+
+def startRDS(MAXHOPS):
     rdsConst = 0.3 #30% probability of activation of node 
-    userID = "25833004@N07"#zabong
-    randomWalk(userID, MAXHOPS)
+    pass
 
 def generateRDS(MAXHOPS, rdsConst):
     pass
 
+def startRW(MAXHOPS):
+    fp = open("smallFlickrList.txt")
+    for line in fp: 
+        userID = line.rstrip("\n")
+        print ("Current userID: %s"%userID)
+        randomWalk(userID, MAXHOPS)    
+    #userID = "25833004@N07"#zabong
+    
 def randomWalk(userID, MAXHOPS):
     nodeList = []
     nodeSet = set()
@@ -32,8 +43,8 @@ def randomWalk(userID, MAXHOPS):
                 pass
         else: 
             pass
-            #fix for checking local minima...
-          
+
+        #fix for checking local minima...
         if ( len(nodeList) - len(nodeSet) > int(MAXHOPS * 0.1) ):
             print ("nodeList: %s, nodeSet: %s, returning..."%(len(nodeList), len(nodeSet)))
             print nodeList
