@@ -2,7 +2,7 @@
 Generates an RW crawl.
 
 """
-import flickr
+import flickr 
 import random
 
 def main():
